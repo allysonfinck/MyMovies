@@ -1,3 +1,3 @@
-# mapp
+# MyMovies
 
 Eric Sanchez - collaborator
