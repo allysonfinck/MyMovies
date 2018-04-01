@@ -1,3 +1,3 @@
 # MyMovies
 
-Eric Sanchez - collaborator
+Eric Sanchez and Allyson Finck
