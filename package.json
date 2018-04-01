@@ -1,5 +1,5 @@
 {
-  "name": "mapp",
+  "name": "mymovies",
   "version": "1.0.0",
   "description": "Eric Sanchez - collaborator",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allysonfinck/mapp.git"
+    "url": "git+https://github.com/childofthe20th/MyMovies.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/allysonfinck/mapp/issues"
+    "url": "https://github.com/childofthe20th/MyMovies/issues"
   },
-  "homepage": "https://github.com/allysonfinck/mapp#readme",
+  "homepage": "https://github.com/childofthe20th/MyMovies#readme",
   "dependencies": {
     "express": "^4.16.3",
     "mongoose": "^5.0.12"

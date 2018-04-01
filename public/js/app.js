@@ -15,7 +15,7 @@ app.controller("MainController", ["$http", function($http) {
 
     this.getMovies = () => {
         $http({
-            method: 'GET',
+            method: "GET",
             url: this.searchURL + this.movieTitle
         }).then((response) => {
             this.movies = response.data.Search;
@@ -23,9 +23,20 @@ app.controller("MainController", ["$http", function($http) {
         }, (error) => {
             console.error(error);
         }).catch((err) => console.error('Catch: ', err));
-    }
+    };
 
     this.myMovies = [];
+
+    this.getMyMovies = () => {
+        $http({
+            method: "GET",
+            url: "/movies"
+        }).then((response)=>{
+            this.myMovies = response.data;
+        }, (error)=>{
+            console.log("error");
+        });
+    };
 
     this.addMovie = (movie) => {
         $http({
@@ -37,12 +48,23 @@ app.controller("MainController", ["$http", function($http) {
                 poster: movie.Poster
             }
         }).then((response) => {
-            // this.myMovies = response.data
-            this.myMovies.push(response.data)
+            this.myMovies.push(response.data);
+            this.getMyMovies();
             console.log(this.myMovies);
         }, (error) => {
             console.error(error);
         }).catch((err) => console.error('Catch: ', err));
-    }
+    };
+
+    this.deleteMovie = (movie) => {
+        $http({
+            method: "DELETE",
+            url: "/movies/" + movie._id
+        }).then((response) => {
+            this.getMyMovies();
+        });
+    };
+
+    this.getMyMovies();
 
 }]); //closes app.controller

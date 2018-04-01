@@ -11,11 +11,11 @@ const mapsController = require('./controllers/movies.js');
 app.use('/movies', mapsController);
 
 mongoose.connect('mongodb://localhost:27017/movies');
-mongoose.connection.once('open', ()=>{
-  console.log('connected to mongod');
+mongoose.connection.once('open', () => {
+    console.log('connected to mongod');
 })
 
 
-app.listen(port, ()=>{
-  console.log('listening');
+app.listen(port, () => {
+    console.log('listening');
 })
