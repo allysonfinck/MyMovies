@@ -2,6 +2,13 @@
   font-family: 'Cabin', sans-serif;
 }
 
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: ghostwhite;
+    padding: 20px;
+}
+
 h1 {
   text-align: center;
   margin-bottom: 50px;
@@ -37,10 +44,14 @@ h1 {
 .movieCard {
   width: 30vw;
   height: auto;
+  margin-bottom: 50px;
+  border: 1px solid #51a39a;
+  padding: 15px;
+  background: white;
 }
 
 .movieCard img {
-  max-width: 30vw;
+  max-width: 90%;
   display: block;
   margin: 0 auto;
 }
@@ -52,6 +63,11 @@ h1 {
   text-align: center;
   margin-right: 20px;
   margin-bottom: 20px;
+  background: white;
+}
+
+.movieList img {
+    width: 95%;
 }
 
 .movieList h4 {
