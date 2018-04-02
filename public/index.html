@@ -29,10 +29,18 @@
         <h6>Rated: {{movie.Rated}}</h6> -->
     </div>
 
-    <div ng-repeat="myMovie in ctrl.myMovies">
+    <div ng-repeat="myMovie in ctrl.myMovies | orderBy: 'name'">
         <h2>{{myMovie.name}}, {{myMovie.year}}</h2>
         <img ng-src="{{myMovie.poster}}" alt="{{myMovie.name}}"><br/>
-        <input type="submit" ng-click="ctrl.deleteMovie(myMovie)" value="Delete Movie">
+        <i class="small material-icons" ng-click="ctrl.deleteMovie(myMovie)">delete</i>
+        <i class="small material-icons" ng-click="ctrl.movieLikes(myMovie)">ICON {{ myMovie.likes }}</h6>
+        <!-- <input type="submit" ng-click="ctrl.editMovieForm() === $index" value="Edit Movie">
+        <form ng-if="$index === ctrl.editMovieForm" ng-submit="ctrl.editMovie(myMovie)">
+            <input type="text" ng-model="ctrl.updateTitle" placeholder="{{myMovie.name}}">
+            <input type="text" ng-model="ctrl.updateYear" placeholder="{{myMovie.year}}">
+            <input type="text" ng-model="ctrl.updatePoster" placeholder="{{myMovie.poster}}">
+            <input type="submit" value="Update">
+        </form> -->
     </div>
 
 </body>

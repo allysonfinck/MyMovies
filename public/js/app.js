@@ -2,6 +2,7 @@ const app = angular.module("MovieApp", []);
 
 app.controller("MainController", ["$http", function($http) {
     this.appName = "MyMovies";
+    this.editMovieForm = null;
 
     this.baseURL = "http://www.omdbapi.com/?";
     this.apikey = "apikey=" + "dc292b86";
@@ -31,9 +32,9 @@ app.controller("MainController", ["$http", function($http) {
         $http({
             method: "GET",
             url: "/movies"
-        }).then((response)=>{
+        }).then((response) => {
             this.myMovies = response.data;
-        }, (error)=>{
+        }, (error) => {
             console.log("error");
         });
     };
@@ -65,6 +66,36 @@ app.controller("MainController", ["$http", function($http) {
         });
     };
 
+    this.editMovie = (movie) => {
+        $http({
+            method: "PUT",
+            url: "/movies/" + movie._id,
+            data: {
+                name: movie.updateTitle,
+                year: movie.updateYear,
+                poster: movie.updatePoster
+            }
+        }).then((response) => {
+            this.getMyMovies();
+        })
+    }
+
+    this.movieLikes = (movie) => {
+        // console.log("like!");
+        $http({
+            method: "PUT",
+            url: "/movies/" + movie._id,
+            data: {
+                likes: movie.likes
+            }
+        }).then(response => {
+            console.log(response.data.likes)
+            movie.likes = movie.likes + 1
+        }, error => {
+            console.log(error)
+        }).catch(err => console.log("Catch", error))
+    };
+
     this.getMyMovies();
 
-}]); //closes app.controller
+}]);
