@@ -65,6 +65,22 @@ app.controller("MainController", ["$http", function($http) {
         });
     };
 
+    this.movieLikes = (movie) => {
+        // console.log("like!");
+        $http({
+            method: "PUT",
+            url: "/movies/" + movie._id,
+            data: {
+                likes: movie.likes
+            }
+        }).then(response => {
+            console.log(response.data.likes)
+            movie.likes = movie.likes + 1
+        }, error => {
+            console.log(error)
+        }).catch(err => console.log("Catch", error))
+    };
+
     this.getMyMovies();
 
 }]); //closes app.controller
