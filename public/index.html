@@ -54,6 +54,13 @@
     </div>
 
 
+    <div ng-repeat="myMovie in ctrl.myMovies | orderBy: 'name'">
+        <h2>{{myMovie.name}}, {{myMovie.year}}</h2>
+        <img ng-src="{{myMovie.poster}}" alt="{{myMovie.name}}"><br/>
+        <i class="small material-icons" ng-click="ctrl.deleteMovie(myMovie)">delete</i>
+        <i class="small material-icons" ng-click="ctrl.movieLikes(myMovie)">thumb_up {{ myMovie.likes }}</i>
+    </div>
+
 </body>
 
 </html>
