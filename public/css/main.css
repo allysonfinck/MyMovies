@@ -1,0 +1,83 @@
+* {
+  font-family: 'Cabin', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #51a39a;
+}
+
+.findMovie {
+  display: block;
+  margin: 30px auto;
+  max-width: 80vw;
+  text-align: center;
+}
+
+.moviePage {
+  display: flex;
+  flex-direction: row;
+}
+
+.movieGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 65vw;
+  margin: 50px;
+}
+
+.movieGrid button{
+  display: block;
+  margin: 0 auto;
+}
+
+.movieCard {
+  width: 30vw;
+  height: auto;
+}
+
+.movieCard img {
+  max-width: 30vw;
+  display: block;
+  margin: 0 auto;
+}
+
+.movieList {
+  width: 25vw;
+  border: 1px solid #51a39a;
+  padding: 20px;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.movieList h4 {
+  color: #51a39a;
+}
+
+.movieList i {
+  color: #51a39a;
+}
+
+.movieList i:hover {
+  cursor: pointer;
+}
+
+.listImage {
+  max-height: 25vh;
+  margin: 0 auto;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.icons h5 {
+  color: #51a39a;
+  margin: 4px;
+}

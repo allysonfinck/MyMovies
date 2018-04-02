@@ -66,20 +66,6 @@ app.controller("MainController", ["$http", function($http) {
         });
     };
 
-    this.editMovie = (movie) => {
-        $http({
-            method: "PUT",
-            url: "/movies/" + movie._id,
-            data: {
-                name: movie.updateTitle,
-                year: movie.updateYear,
-                poster: movie.updatePoster
-            }
-        }).then((response) => {
-            this.getMyMovies();
-        })
-    }
-
     this.movieLikes = (movie) => {
         // console.log("like!");
         $http({
